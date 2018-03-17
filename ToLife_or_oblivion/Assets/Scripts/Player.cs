@@ -14,6 +14,10 @@ public class Player : MonoBehaviour {
     private const float gravity = 9.8f;
 
     GameManager _GameManager;
+    UIManager_Message _MessageManager;
+
+    [SerializeField]
+    GameObject _backgroundMessageCanvas;
 
 	// Use this for initialization
 	void Start () {
@@ -70,6 +74,51 @@ public class Player : MonoBehaviour {
                 _GameManager.continuePlaying();
             }
         }
+    }
+
+	private void OnTriggerEnter(Collider other)
+	{
+        _MessageManager = GameObject.Find("CanvasPlayer").GetComponent<UIManager_Message>();
+
+        if(other.tag.Equals("Wall")) {
+            
+            if(_MessageManager != null) {
+                _MessageManager.changeWaterText();
+                _MessageManager.showText();
+                _backgroundMessageCanvas.SetActive(true);
+                StartCoroutine(waitToReset());
+            }
+
+        }
+        if (other.tag.Equals("Rock"))
+        {
+            if (_MessageManager != null)
+            {
+                _MessageManager.changeRocksText();
+                _MessageManager.showText();
+                _backgroundMessageCanvas.SetActive(true);
+                StartCoroutine(waitToReset());
+            }
+
+        }
+        if (other.tag.Equals("Cliff"))
+        {
+            if (_MessageManager != null)
+            {
+                _MessageManager.changeCliffText();
+                _MessageManager.showText();
+                _backgroundMessageCanvas.SetActive(true);
+                StartCoroutine(waitToReset());
+            }
+
+        }
+	}
+
+    IEnumerator waitToReset() {
+        yield return new WaitForSeconds(2);
+        _backgroundMessageCanvas.SetActive(false);
+        _MessageManager.hideText();
+
     }
 
 }
