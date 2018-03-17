@@ -13,24 +13,30 @@ public class Player : MonoBehaviour {
 
     private const float gravity = 9.8f;
 
+    GameManager _GameManager;
+
 	// Use this for initialization
 	void Start () {
 
         _controller = GetComponent<CharacterController>();
         viewCamera = Camera.main;
+        _GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        movePlayer();
-        lookToMousePosition();
+        if(_GameManager.isPlaying) {
+            movePlayer();
+            lookToMousePosition();
+        }
+        checkIfWantToPause();
 	}
 
     private void movePlayer() {
 
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
 
         Vector3 direction = new Vector3(horizontalInput,0,verticalInput).normalized;
         Vector3 velocity = direction * speed;
@@ -54,6 +60,16 @@ public class Player : MonoBehaviour {
             transform.LookAt(updatedMousePosition);
         }
 
+    }
+
+    void checkIfWantToPause() {
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            if(_GameManager.isPlaying){
+                _GameManager.pauseGame();
+            }else{
+                _GameManager.continuePlaying();
+            }
+        }
     }
 
 }

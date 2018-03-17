@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public enum stateOfGame { notStarted, Playing, Paused};
+    UIManager _UIManager;
 
-	// Use this for initialization
-	void Start () {
-		
+    public bool isPlaying = true;
+
+	private void Start()
+	{
+        _UIManager = GameObject.Find("Canvas").GetComponent<UIManager>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+	public void continuePlaying() {
+        isPlaying = true;
+        _UIManager.turnPauseTextOff();
+    }
+
+    public void pauseGame() {
+        isPlaying = false;
+        _UIManager.turnPauseTextOn();
+    }
 }
