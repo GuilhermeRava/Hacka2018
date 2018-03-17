@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class waterMakeNoise : MonoBehaviour {
 
-    public float power;
-    public float scale;
-    public float timeScale;
+    public float power = 3;
+    public float scale = 1;
+    public float timeScale = 1;
 
     private float xOffset;
     private float yOffset;
@@ -14,15 +14,15 @@ public class waterMakeNoise : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        mf.GetComponent<MeshFilter>();
+        mf = GetComponent<MeshFilter>();
         makeNoise();
 	}
 
 	private void Update()
 	{
         makeNoise();
-        xOffset = Time.deltaTime + timeScale;
-        yOffset = Time.deltaTime + timeScale;
+        xOffset += Time.deltaTime * timeScale;
+        yOffset += Time.deltaTime * timeScale;
 
 	}
 
@@ -32,6 +32,7 @@ public class waterMakeNoise : MonoBehaviour {
         for (int i = 0; i < vertices.Length; i++) {
             vertices[i].y = calculateHeight(vertices[i].x, vertices[i].z) * power;
         }
+        mf.mesh.vertices = vertices;
     }
 
     float calculateHeight(float x, float y) {
