@@ -6,6 +6,8 @@ public class Player : MonoBehaviour {
 
     CharacterController _controller;
 
+    Camera viewCamera;
+
     [SerializeField]
     private float speed;
 
@@ -15,13 +17,14 @@ public class Player : MonoBehaviour {
 	void Start () {
 
         _controller = GetComponent<CharacterController>();
-
+        viewCamera = Camera.main;
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
         movePlayer();
+        lookToMousePosition();
 	}
 
     private void movePlayer() {
@@ -37,6 +40,19 @@ public class Player : MonoBehaviour {
         velocity = transform.transform.TransformDirection(velocity);
 
         _controller.Move(velocity * Time.deltaTime);
+
+    }
+
+    private void lookToMousePosition() {
+
+        Ray ray = viewCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if(Physics.Raycast(ray, out hit)) {
+
+            Vector3 updatedMousePosition = new Vector3(hit.point.x,transform.position.y,hit.point.z);
+            transform.LookAt(updatedMousePosition);
+        }
 
     }
 
