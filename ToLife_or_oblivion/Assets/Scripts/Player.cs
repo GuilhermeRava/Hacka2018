@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    [SerializeField]
+    AudioClip[] footSteps;
+
+    AudioSource _audioSource;
+
     CharacterController _controller;
 
     Camera viewCamera;
 
     [SerializeField]
     private float speed;
+
+    private bool isMoving = false;
 
     private const float gravity = 9.8f;
 
@@ -19,10 +26,13 @@ public class Player : MonoBehaviour {
     [SerializeField]
     GameObject _backgroundMessageCanvas;
 
+    Vector3 velocity = Vector3.zero;
+
 	// Use this for initialization
 	void Start () {
 
         _controller = GetComponent<CharacterController>();
+        _audioSource = GetComponent<AudioSource>();
         viewCamera = Camera.main;
         _GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 		
@@ -42,14 +52,27 @@ public class Player : MonoBehaviour {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
+        if(horizontalInput != 0 || verticalInput != 0) {
+            isMoving = true;
+        }
+        else {
+            isMoving = false;
+        }
+
         Vector3 direction = new Vector3(horizontalInput,0,verticalInput).normalized;
-        Vector3 velocity = direction * speed;
+        velocity = direction * speed;
 
         velocity.y -= gravity;
 
         velocity = transform.transform.TransformDirection(velocity);
 
         _controller.Move(velocity * Time.deltaTime);
+
+        if(!_audioSource.isPlaying && isMoving) {
+            StartCoroutine(waitToPlaySoundAgain());  
+            //playWalkingSound();
+        }
+
 
     }
 
@@ -118,6 +141,20 @@ public class Player : MonoBehaviour {
         yield return new WaitForSeconds(2);
         _backgroundMessageCanvas.SetActive(false);
         _MessageManager.hideText();
+
+    }
+
+    void playWalkingSound() {
+        int randomNumber = Random.Range(0, 4);
+
+        AudioSource.PlayClipAtPoint(footSteps[randomNumber], transform.position, 0.3f);
+
+    }
+
+    IEnumerator waitToPlaySoundAgain() {
+        playWalkingSound();
+        yield return new WaitForSeconds(0.01f);
+        _audioSource.Stop();
 
     }
 
