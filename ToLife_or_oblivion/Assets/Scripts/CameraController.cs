@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour {
     public GameObject target;
 
     [SerializeField]
-    private Vector3 cameraPosition = new Vector3(3,6,5);
+    private Vector3 cameraPosition = new Vector3(-5,6,-3);
 
 	// Use this for initialization
 	void Start () {

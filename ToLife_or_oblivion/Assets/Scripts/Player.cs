@@ -19,6 +19,8 @@ public class Player : MonoBehaviour {
 
     private bool isMoving = false;
 
+    public bool isOnMenu;
+
     private const float gravity = 9.8f;
 
     GameManager _GameManager;
@@ -44,9 +46,12 @@ public class Player : MonoBehaviour {
         if(_GameManager.isPlaying) {
 			//Stop walking animation
 			teddy_animator.SetBool ("isWalking",false);
-            movePlayer();
+            if (!isOnMenu) {
+                movePlayer();
 
-            lookToMousePosition();
+                lookToMousePosition();
+            }
+           
         }
         checkIfWantToPause();
 	}
@@ -151,9 +156,12 @@ public class Player : MonoBehaviour {
     }
 
     void playWalkingSound() {
-        int randomNumber = Random.Range(0, 4);
+        if(footSteps.Length != 0) {
+            int randomNumber = Random.Range(0, 4);
 
-        AudioSource.PlayClipAtPoint(footSteps[randomNumber], transform.position, 0.3f);
+            AudioSource.PlayClipAtPoint(footSteps[randomNumber], transform.position, 0.3f);
+
+        }
 
     }
 

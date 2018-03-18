@@ -11,6 +11,7 @@ public class UIManager_Message : MonoBehaviour {
 
     TextMeshProUGUI message;
 
+    [SerializeField]
     private int counter = 0;
 
     string[] cliffMessages = {
@@ -43,7 +44,7 @@ public class UIManager_Message : MonoBehaviour {
 
     public void changeWaterText() {
 
-        if (counter == waterMessages.Length) {
+        if (counter >= waterMessages.Length) {
             counter = 0;
         }
         message.text = waterMessages[counter++];
@@ -52,7 +53,7 @@ public class UIManager_Message : MonoBehaviour {
     public void changeCliffText()
     {
 
-        if (counter == cliffMessages.Length)
+        if (counter >= cliffMessages.Length)
         {
             counter = 0;
         }
@@ -62,7 +63,7 @@ public class UIManager_Message : MonoBehaviour {
     public void changeCrabsText()
     {
 
-        if (counter == crabMessages.Length)
+        if (counter >= crabMessages.Length)
         {
             counter = 0;
         }
@@ -72,7 +73,7 @@ public class UIManager_Message : MonoBehaviour {
     public void changeRocksText()
     {
 
-        if (counter == rocksMessages.Length)
+        if (counter >= rocksMessages.Length)
         {
             counter = 0;
         }
