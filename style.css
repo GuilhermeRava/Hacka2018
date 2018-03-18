@@ -1,0 +1,62 @@
+header,footer {
+	width: 100%;
+	background-color:black;
+	color:white;
+}
+
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#itens{
+	list-style-type: none;
+	line-height: 1.75em;
+
+}
+
+nav > ul > li {
+	float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+body {
+	margin: 0;
+	background: #898E8C;
+}
+
+footer{
+    width: 100%;
+    text-align: center;
+}
+
+#playBtn{
+	padding: 15px;
+	padding-left: 25px;
+	padding-right: 25px;
+	margin-bottom: 30px;
+	background: #6B5B95;
+	border: 3px solid #E94B3C;
+}
+
+p#playP{
+	margin-bottom: 30px;
+}
+
+#hero{
+	width: 100%;
+}
