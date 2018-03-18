@@ -581,6 +581,120 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 232826118}
+--- !u!1001 &240701542
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400040, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 400040, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -18.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 400040, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -70.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400040, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.64363843
+      objectReference: {fileID: 0}
+    - target: {fileID: 400040, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.011192501
+      objectReference: {fileID: 0}
+    - target: {fileID: 400040, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.013733622
+      objectReference: {fileID: 0}
+    - target: {fileID: 400040, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7651247
+      objectReference: {fileID: 0}
+    - target: {fileID: 400040, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_RootOrder
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 100040, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_Name
+      value: TeddyBear4 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.22770819
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.74770427
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.53727704
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.31689218
+      objectReference: {fileID: 0}
+    - target: {fileID: 400040, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -80.142006
+      objectReference: {fileID: 0}
+    - target: {fileID: 400040, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.185
+      objectReference: {fileID: 0}
+    - target: {fileID: 400040, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 2.2120001
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 70fa1f5a78b6ed14ab73ed27b95238bb, type: 2}
+    - target: {fileID: 100040, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_TagString
+      value: Teddy
+      objectReference: {fileID: 0}
+    - target: {fileID: 100040, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+  m_ParentPrefab: {fileID: 100100000, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+  m_IsPrefabParent: 0
+--- !u!1 &240701543 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100040, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+  m_PrefabInternal: {fileID: 240701542}
+--- !u!114 &240701544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 240701543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b846a11eac324fef866e60ed1cd6eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &240701545
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 240701543}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.953683, y: 4.0581417, z: 1.9333819}
+  m_Center: {x: -0.13704918, y: 0.70092964, z: 0.46669334}
 --- !u!1 &244273156
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,10 +1058,10 @@ MonoBehaviour:
   NumberOfObjectsPickedUp: 0
   interectionSound: {fileID: 8300000, guid: 22fd3a3956bcc418e8b60d20e805d4e1, type: 3}
   teddy_animator: {fileID: 382364460}
-  speed: 3
+  speed: 4
   isOnMenu: 0
   _backgroundMessageCanvas: {fileID: 232826118}
-  teddyPrefab: {fileID: 100040, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
+  teddyPrefab: {fileID: 240701543}
 --- !u!143 &382364458
 CharacterController:
   m_ObjectHideFlags: 0
