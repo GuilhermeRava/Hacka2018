@@ -10,6 +10,7 @@ ul.nav {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    font-size: 23px;
 }
 
 #itens{
@@ -49,7 +50,7 @@ footer{
 	padding-left: 25px;
 	padding-right: 25px;
 	margin-bottom: 30px;
-	background: #6B5B95;
+	background: #333;
 	border: 3px solid #E94B3C;
 }
 
@@ -59,4 +60,12 @@ p#playP{
 
 #hero{
 	width: 100%;
+}
+
+p#playP > a#playBtn:link,
+p#playP > a#playBtn:visited,
+p#playP > a#playBtn:active{
+	color:white;
+	text-decoration: none;
+	font-size: 20px;
 }
