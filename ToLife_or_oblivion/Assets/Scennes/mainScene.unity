@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 32535793}
-  m_IndirectSpecularColor: {r: 0.08619634, g: 0.10226064, b: 0.09773425, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -572,6 +572,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f5a5247ff523047e7ac9c4313eae377c, type: 3}
   teddy_animator: {fileID: 382364460}
   speed: 4
+  isOnMenu: 0
   _backgroundMessageCanvas: {fileID: 232826118}
 --- !u!143 &382364458
 CharacterController:
@@ -5090,6 +5091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mText: {fileID: 1741348061}
+  counter: 0
 --- !u!1 &1024500896
 GameObject:
   m_ObjectHideFlags: 0
@@ -8963,6 +8965,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f5a5247ff523047e7ac9c4313eae377c, type: 3}
   teddy_animator: {fileID: 0}
   speed: 4
+  isOnMenu: 0
   _backgroundMessageCanvas: {fileID: 1154401873}
 --- !u!23 &1746119811
 MeshRenderer:
@@ -9307,6 +9310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mText: {fileID: 857249085}
+  counter: 0
 --- !u!114 &1854370340
 MonoBehaviour:
   m_ObjectHideFlags: 0
