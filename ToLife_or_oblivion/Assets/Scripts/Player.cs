@@ -12,7 +12,8 @@ public class Player : MonoBehaviour {
     CharacterController _controller;
 
     Camera viewCamera;
-
+	[SerializeField]
+	Animator teddy_animator;
     [SerializeField]
     private float speed;
 
@@ -41,7 +42,10 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if(_GameManager.isPlaying) {
+			//Stop walking animation
+			teddy_animator.SetBool ("isWalking",false);
             movePlayer();
+
             lookToMousePosition();
         }
         checkIfWantToPause();
@@ -54,6 +58,8 @@ public class Player : MonoBehaviour {
 
         if(horizontalInput != 0 || verticalInput != 0) {
             isMoving = true;
+			//Start walking animation
+			teddy_animator.SetBool ("isWalking",true);
         }
         else {
             isMoving = false;
