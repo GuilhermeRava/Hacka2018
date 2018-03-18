@@ -3,10 +3,12 @@
     <Files>
       <File FileName="Assets/Scripts/GameManager.cs" Line="23" Column="38" />
       <File FileName="Assets/Scripts/WaterPlaneGenerator.cs" Line="53" Column="6" />
-      <File FileName="Assets/Scripts/CameraController.cs" Line="10" Column="51" />
+      <File FileName="Assets/Scripts/CameraController.cs" Line="25" Column="5" />
       <File FileName="Assets/Scripts/waterMakeNoise.cs" Line="25" Column="47" />
-      <File FileName="Assets/Scripts/Player.cs" Line="44" Column="1" />
-      <File FileName="Assets/Scripts/UIManager_Message.cs" Line="47" Column="22" />
+      <File FileName="Assets/Scripts/Player.cs" Line="109" Column="325" />
+      <File FileName="Assets/Scripts/UIManager_Message.cs" Line="52" Column="45" />
+      <File FileName="Assets/Scripts/Gramophone.cs" Line="15" Column="24" />
+      <File FileName="Assets/Scripts/Retrivable.cs" Line="29" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

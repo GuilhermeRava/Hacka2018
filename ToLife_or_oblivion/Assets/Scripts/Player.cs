@@ -7,13 +7,21 @@ public class Player : MonoBehaviour {
     [SerializeField]
     AudioClip[] footSteps;
 
+    public int NumberOfObjectsPickedUp = 0;
+
+    [SerializeField]
+    AudioClip interectionSound;
+
     AudioSource _audioSource;
 
     CharacterController _controller;
 
+    Gramophone gramofone;
+
     Camera viewCamera;
 	[SerializeField]
 	Animator teddy_animator;
+    Animator teddy_animator_Idle;
     [SerializeField]
     private float speed;
 
@@ -29,11 +37,14 @@ public class Player : MonoBehaviour {
     [SerializeField]
     GameObject _backgroundMessageCanvas;
 
+    [SerializeField]
+    GameObject teddyPrefab;
+
     Vector3 velocity = Vector3.zero;
 
 	// Use this for initialization
 	void Start () {
-
+        
         _controller = GetComponent<CharacterController>();
         _audioSource = GetComponent<AudioSource>();
         viewCamera = Camera.main;
@@ -95,7 +106,10 @@ public class Player : MonoBehaviour {
         if(Physics.Raycast(ray, out hit)) {
 
             Vector3 updatedMousePosition = new Vector3(hit.point.x,transform.position.y,hit.point.z);
-            transform.LookAt(updatedMousePosition);
+            if (((updatedMousePosition.x - transform.position.x) * (updatedMousePosition.x - transform.position.x)) + ((updatedMousePosition.y - transform.position.y) * (updatedMousePosition.y - transform.position.y)) + ((updatedMousePosition.z - transform.position.z) * (updatedMousePosition.z - transform.position.z)) >= 1f) {
+                transform.LookAt(updatedMousePosition);
+            }
+           
         }
 
     }
@@ -109,6 +123,54 @@ public class Player : MonoBehaviour {
             }
         }
     }
+
+	private void OnTriggerStay(Collider other)
+	{
+        if (other.tag.Equals("Gramofone"))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+
+                gramofone = other.GetComponent<Gramophone>();
+
+                AudioSource.PlayClipAtPoint(interectionSound, transform.position, 1);
+
+                gramofone.playWhiteNoise();
+
+            }
+
+        }
+
+        if (other.tag.Equals("Paper"))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+
+                Retrivable paper = other.GetComponent<Retrivable>();
+
+                AudioSource.PlayClipAtPoint(interectionSound, transform.position, 1);
+                _audioSource.Stop();
+
+                paper.pickPaper();
+
+
+            }
+
+        }
+        if (other.tag.Equals("Teddy"))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if(NumberOfObjectsPickedUp == 4) {
+                    
+                    Destroy(other.gameObject);
+                    Instantiate(teddyPrefab, other.transform.position + new Vector3(0,0.90f,0), Quaternion.identity);
+                }
+
+            }
+        }
+
+	}
 
 	private void OnTriggerEnter(Collider other)
 	{
@@ -146,10 +208,12 @@ public class Player : MonoBehaviour {
             }
 
         }
+
+  
 	}
 
     IEnumerator waitToReset() {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         _backgroundMessageCanvas.SetActive(false);
         _MessageManager.hideText();
 
@@ -171,5 +235,11 @@ public class Player : MonoBehaviour {
         _audioSource.Stop();
 
     }
+
+    public void pickedCollectable() {
+        NumberOfObjectsPickedUp++;
+    }
+
+
 
 }

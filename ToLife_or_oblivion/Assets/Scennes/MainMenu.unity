@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.09035159, g: 0.107151575, b: 0.102420054, a: 1}
+  m_IndirectSpecularColor: {r: 0.0012169061, g: 0.007572286, b: 0.0022383158, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -392,6 +392,71 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.36946338, y: 0.37086722, z: 0.19005148}
   m_Center: {x: 0.0005727973, y: 0.1713817, z: 0.0062014917}
+--- !u!1 &383313022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 383313023}
+  - component: {fileID: 383313024}
+  m_Layer: 0
+  m_Name: Point light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &383313023
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 383313022}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.7, y: 5.8, z: 19.51}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 578920289}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &383313024
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 383313022}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 0.024978368, g: 0.25672364, b: 0.4852941, a: 1}
+  m_Intensity: 3
+  m_Range: 40
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 20
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &423708782
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +713,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 4.811533, y: 75.7}
-  m_SizeDelta: {x: 169.51, y: 46.88}
+  m_SizeDelta: {x: 169.51, y: 46.880005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &544308261
 MonoBehaviour:
@@ -1017,6 +1082,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7fe173247404d4c96b4a8f8850854cf1, type: 3}
   - {fileID: 8300000, guid: cf5b1d4bed58c412395215a9507b6825, type: 3}
   - {fileID: 8300000, guid: f5a5247ff523047e7ac9c4313eae377c, type: 3}
+  interectionSound: {fileID: 0}
   teddy_animator: {fileID: 578920288}
   speed: 4
   isOnMenu: 1
@@ -1122,6 +1188,10 @@ CharacterController:
 Animator:
   m_PrefabParentObject: {fileID: 9500000, guid: 8cdfa167b8075944995b11c98de64c48,
     type: 3}
+  m_PrefabInternal: {fileID: 706889452}
+--- !u!4 &578920289 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400040, guid: 8cdfa167b8075944995b11c98de64c48, type: 3}
   m_PrefabInternal: {fileID: 706889452}
 --- !u!1 &673332212
 GameObject:
@@ -4871,7 +4941,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 4.8115234, y: -42}
-  m_SizeDelta: {x: 169.51, y: 46.88}
+  m_SizeDelta: {x: 169.51001, y: 46.880005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1109177783
 MonoBehaviour:

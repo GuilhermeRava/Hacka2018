@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour {
     public GameObject target;
 
     [SerializeField]
-    private Vector3 cameraPosition = new Vector3(-5,6,-3);
+    private Vector3 cameraPosition = new Vector3(-15,6,-3);
 
 	// Use this for initialization
 	void Start () {
@@ -21,4 +21,6 @@ public class CameraController : MonoBehaviour {
         transform.LookAt(target.transform.position);
 
 	}
+
+
 }

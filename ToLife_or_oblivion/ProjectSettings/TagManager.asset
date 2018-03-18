@@ -7,6 +7,9 @@ TagManager:
   - Wall
   - Rock
   - Cliff
+  - Gramofone
+  - Paper
+  - Teddy
   layers:
   - Default
   - TransparentFX
@@ -16,9 +19,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Camera
+  - Paper
+  - upfront
   - 
   - 
   - 

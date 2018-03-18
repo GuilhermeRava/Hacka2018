@@ -10,6 +10,7 @@ public class UIManager_Message : MonoBehaviour {
     GameObject mText;
 
     TextMeshProUGUI message;
+    Camera mainCamera;
 
     [SerializeField]
     private int counter = 0;
@@ -32,15 +33,24 @@ public class UIManager_Message : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        transform.LookAt(Camera.main.transform.position);
+        mainCamera = Camera.main;
+        transform.LookAt(mainCamera.transform.position);
         message = mText.GetComponent<TextMeshProUGUI>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        //Vector3 updatedPosition = new Vector3(Camera.main.transform.position.x * -1,Camera.main.transform.position.y);
-        transform.LookAt(Camera.main.transform.position + new Vector3(0,-45,-120));
+        if (mainCamera.enabled)
+        {
+            //Vector3 updatedPosition = new Vector3(Camera.main.transform.position.x * -1,Camera.main.transform.position.y);
+            transform.LookAt(mainCamera.transform.position + new Vector3(-40, -45, -120));
+        }
 	}
+    IEnumerator lookatCamera()
+    {
+        transform.LookAt(mainCamera.transform.position + new Vector3(-40, -45, -120));
+        yield return new WaitForSeconds(1f);
+    }
 
     public void changeWaterText() {
 

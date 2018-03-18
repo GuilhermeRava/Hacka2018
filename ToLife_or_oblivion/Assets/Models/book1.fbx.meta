@@ -1,21 +1,16 @@
 fileFormatVersion: 2
-guid: 302dd2bfaa76a4591858e8f1e71e9354
-timeCreated: 1521339006
+guid: 79c26b1fef9b2416f96ef5c949899ebb
+timeCreated: 1521351743
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Camera
-    100004: Lamp
-    100006: Plane
-    100008: Plane.001
+    100002: Plane
+    100004: Plane.001
     400000: //RootNode
-    400002: Camera
-    400004: Lamp
-    400006: Plane
-    400008: Plane.001
-    2000000: Camera
+    400002: Plane
+    400004: Plane.001
     2100000: white
     2100002: capa
     2300000: Plane
@@ -24,7 +19,6 @@ ModelImporter:
     3300002: Plane.001
     4300000: Plane.001
     4300002: Plane
-    10800000: Lamp
   externalObjects: {}
   materials:
     importMaterials: 1
